@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "classnames": "^2.1.5",
+    "director": "^1.2.0",
+    "express": "^4.16.3",
+    "mongodb": "^2.2.35",
+    "pg-promise": "^5.9.7",
+    "pkg": "^4.3.3",
+    "react": "^0.13.3",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.1"
+  },
+  "devDependencies": {
+    "bin-up": "^1.1.0",
+    "concurrently": "^3.6.0",
+    "nodemon": "^1.17.5"
+  },
+  "scripts": {
+    "cy:open": "bin-up cypress open --project ../.. --env framework=react",
+    "cy:run": "bin-up cypress run --project ../.. --env framework=react",
+    "cy:run:record": "npm run cy:run -- --record",
+    "start": "nodemon server.js",
+    "test:gui": "bin-up run-p --race start cy:open",
+    "test": "bin-up run-p --race start cy:run",
+    "dev": "nodemon server.js",
+    "test:record": "bin-up run-p --raceS start cy:run:record"
+  },
+  "name": "react",
+  "description": "> React is a JavaScript library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "proxy": "http://localhost:3000/"
+}
